@@ -1,5 +1,4 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Formik, Form } from "formik";
 import axios from "axios";
 
 export default function DeleteStudent() {

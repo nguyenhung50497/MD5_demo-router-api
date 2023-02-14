@@ -15,14 +15,21 @@ export default function ListStudent() {
         <div class="container">
             <h1>List Student</h1>
             <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                    <th></th>
+                    <th></th>
+                </tr>
                 {list.map((item, key) => {
                     return (
                         <tr key={key}>
-                            <td><strong>Name:</strong> {item.name}</td>
-                            <td><strong>Description:</strong> {item.description}</td>
-                            <td><strong>Action:</strong> {item.action}</td>
+                            <td>{item.name}</td>
+                            <td>{item.description}</td>
+                            <td>{item.action}</td>
                             <td><Link to={'/edit-student/'+item.id}><button class="btn btn-primary">Edit</button></Link></td>
-                            <td><Link to={'/delete-student/'+item.id}><button class="btn btn-primary">Delete</button></Link></td>
+                            <td><Link to={'/delete-student/'+item.id}><button class="btn btn-danger">Delete</button></Link></td>
                         </tr>
                     )
                 })}

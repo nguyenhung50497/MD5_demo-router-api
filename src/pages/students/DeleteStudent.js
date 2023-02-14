@@ -14,19 +14,12 @@ export default function DeleteStudent() {
                 </tr>
                 <tr>
                     <td>
-                        <Formik 
-                            onSubmit={() => {
-                                axios.delete('http://localhost:3001/students/' + id).then(() => {
-                                    alert('Delete student successfully');
-                                    navigate('/');
-                                });
-                            }}
-                            enableReinitialize={true}
-                        >
-                            <Form>
-                                <button class="btn btn-danger">Yes</button>
-                            </Form>
-                        </Formik>
+                        <button class="btn btn-danger" onClick={() => {
+                            axios.delete('http://localhost:3001/students/' + id).then(() => {
+                                alert('Delete student successfully');
+                                navigate('/');
+                            });
+                        }}>Yes</button>
                     </td>
                     <td>
                         <Link to={'/'}><button class="btn btn-primary">No</button></Link>
